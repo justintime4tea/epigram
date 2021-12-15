@@ -48,6 +48,12 @@ android {
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        multiDexEnabled true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/io.netty.versions.properties'
     }
 
     buildTypes {
@@ -65,4 +71,13 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    // https://mvnrepository.com/artifact/io.reactivex.rxjava2/rxjava
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
+    // https://mvnrepository.com/artifact/io.reactivex/rxandroid
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    // https://mvnrepository.com/artifact/io.rsocket/rsocket-transport-netty
+    implementation "io.rsocket:rsocket-transport-netty:1.1.1"
+    // https://mvnrepository.com/artifact/io.rsocket/rsocket-core
+    implementation 'io.rsocket:rsocket-core:1.1.1'
+
 }
